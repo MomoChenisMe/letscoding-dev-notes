@@ -1,0 +1,348 @@
+---
+---
+
+/* 匯入原始 Chirpy 主題樣式 */
+@import 'jekyll-theme-chirpy';
+
+/* ===========================================
+   現代活潑風格自訂樣式
+   =========================================== */
+
+/* 主色調設定 - 使用 HSL 變數方便調整 */
+:root {
+  --base-hue: 220; /* 活力藍 - 可更改為其他值 */
+  --accent-color: hsl(var(--base-hue), 85%, 55%);
+  --accent-light: hsl(var(--base-hue), 85%, 65%);
+  --accent-dark: hsl(var(--base-hue), 85%, 45%);
+
+  /* 圓角變數 */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* 陰影變數 */
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* 過渡動畫 */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 深色模式調整 */
+html[data-mode='dark'] {
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ===========================================
+   側邊欄漸層背景
+   =========================================== */
+#sidebar {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--base-hue), 70%, 45%) 0%,
+    hsl(calc(var(--base-hue) + 30), 60%, 50%) 50%,
+    hsl(calc(var(--base-hue) + 60), 65%, 55%) 100%
+  ) !important;
+
+  .site-title,
+  .site-subtitle,
+  .nav-link,
+  .sidebar-bottom a {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .nav-item.active .nav-link {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* ===========================================
+   卡片式設計 - 文章列表
+   =========================================== */
+#post-list .post-preview {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg) !important;
+  padding: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.05));
+  transition: var(--transition-smooth);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+/* ===========================================
+   卡片式設計 - 文章內容
+   =========================================== */
+.post-content {
+  img {
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+  }
+
+  blockquote {
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    border-left: 4px solid var(--accent-color);
+    background: linear-gradient(90deg,
+      hsla(var(--base-hue), 50%, 50%, 0.1) 0%,
+      transparent 100%
+    );
+  }
+
+  pre {
+    border-radius: var(--radius-md) !important;
+  }
+
+  code {
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* ===========================================
+   彩色標籤系統
+   =========================================== */
+.post-tag,
+.tag,
+a[href*="/tags/"] {
+  border-radius: var(--radius-xl) !important;
+  padding: 0.25rem 0.75rem !important;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* 彩虹標籤顏色 */
+.post-tag:nth-child(6n+1),
+.tag:nth-child(6n+1) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+}
+.post-tag:nth-child(6n+2),
+.tag:nth-child(6n+2) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+  color: white !important;
+}
+.post-tag:nth-child(6n+3),
+.tag:nth-child(6n+3) {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+  color: white !important;
+}
+.post-tag:nth-child(6n+4),
+.tag:nth-child(6n+4) {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%) !important;
+  color: white !important;
+}
+.post-tag:nth-child(6n+5),
+.tag:nth-child(6n+5) {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%) !important;
+  color: white !important;
+}
+.post-tag:nth-child(6n+6),
+.tag:nth-child(6n+6) {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%) !important;
+  color: #333 !important;
+}
+
+/* ===========================================
+   分類頁面標籤
+   =========================================== */
+#tags-list .tag-wrapper,
+.tag-cloud a {
+  border-radius: var(--radius-xl) !important;
+  transition: var(--transition-smooth);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* ===========================================
+   按鈕圓角化
+   =========================================== */
+.btn,
+button,
+input[type="submit"] {
+  border-radius: var(--radius-md) !important;
+  transition: var(--transition-smooth);
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* ===========================================
+   搜尋框美化
+   =========================================== */
+#search-input,
+.search-input {
+  border-radius: var(--radius-xl) !important;
+  border: 2px solid transparent;
+  transition: var(--transition-smooth);
+
+  &:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px hsla(var(--base-hue), 85%, 55%, 0.2);
+  }
+}
+
+#search-results {
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-hover);
+  overflow: hidden;
+}
+
+/* ===========================================
+   TOC 目錄美化
+   =========================================== */
+#toc-wrapper {
+  border-radius: var(--radius-lg);
+
+  .toc-link {
+    border-radius: var(--radius-sm);
+    transition: var(--transition-smooth);
+
+    &:hover,
+    &.active {
+      background: hsla(var(--base-hue), 85%, 55%, 0.1);
+      color: var(--accent-color);
+    }
+  }
+}
+
+/* ===========================================
+   頁腳美化
+   =========================================== */
+footer {
+  .footer-link {
+    transition: var(--transition-smooth);
+
+    &:hover {
+      color: var(--accent-color) !important;
+    }
+  }
+}
+
+/* ===========================================
+   滾動條美化 (Webkit)
+   =========================================== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--base-hue), 60%, 60%) 0%,
+    hsl(calc(var(--base-hue) + 30), 50%, 55%) 100%
+  );
+  border-radius: var(--radius-xl);
+
+  &:hover {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--base-hue), 70%, 50%) 0%,
+      hsl(calc(var(--base-hue) + 30), 60%, 45%) 100%
+    );
+  }
+}
+
+/* ===========================================
+   連結懸停效果
+   =========================================== */
+a:not(.btn):not(.nav-link):not(.post-preview) {
+  transition: var(--transition-smooth);
+
+  &:hover {
+    color: var(--accent-color);
+  }
+}
+
+/* ===========================================
+   Archive 頁面卡片化
+   =========================================== */
+.post-list-item,
+.archive-item {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  transition: var(--transition-smooth);
+
+  &:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-card);
+  }
+}
+
+/* ===========================================
+   頭像圓角（如果有設定）
+   =========================================== */
+.avatar,
+#sidebar .avatar {
+  border-radius: 50% !important;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  transition: var(--transition-smooth);
+
+  &:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* ===========================================
+   響應式調整
+   =========================================== */
+@media (max-width: 849px) {
+  #sidebar {
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  }
+
+  #post-list .post-preview {
+    margin: 0 0.5rem 1rem 0.5rem !important;
+  }
+}
+
+/* ===========================================
+   深色模式額外調整
+   =========================================== */
+html[data-mode='dark'] {
+  #sidebar {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--base-hue), 50%, 25%) 0%,
+      hsl(calc(var(--base-hue) + 30), 40%, 30%) 50%,
+      hsl(calc(var(--base-hue) + 60), 45%, 35%) 100%
+    ) !important;
+  }
+
+  .post-tag:nth-child(6n+6),
+  .tag:nth-child(6n+6) {
+    color: #1a1a1a !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--base-hue), 40%, 40%) 0%,
+      hsl(calc(var(--base-hue) + 30), 35%, 35%) 100%
+    );
+  }
+}

@@ -2,11 +2,10 @@
 # https://github.com/cotes2020/jekyll-theme-chirpy
 
 # Site Settings
-title: OpenClaw 部署文件
-tagline: OpenClaw 沙盒環境部署指南
+title: Dev Notes
+tagline: 開發筆記與技術分享
 description: >-
-  OpenClaw 是一個用於建立 AI 代理沙盒環境的工具，
-  讓您可以安全地運行和測試 AI 代理程式。
+  記錄開發過程中的學習心得、技術筆記與實用技巧。
 
 url: "https://MomoChenisMe.github.io"
 baseurl: "/momochenisme-dev-notes"
