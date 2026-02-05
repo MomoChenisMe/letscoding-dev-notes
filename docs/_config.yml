@@ -76,14 +76,6 @@ defaults:
 sass:
   style: compressed
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-redirect-from
-  - jekyll-seo-tag
-  - jekyll-archives
-  - jekyll-sitemap
-
 # Jekyll Archives
 jekyll-archives:
   enabled: [categories, tags]
