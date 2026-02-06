@@ -8,7 +8,7 @@ description: >-
   記錄開發過程中的學習心得、技術筆記與實用技巧。
 
 url: "https://MomoChenisMe.github.io"
-baseurl: "/momochenisme-dev-notes"
+baseurl: "/letscoding-dev-notes"
 
 # Theme
 theme: jekyll-theme-chirpy

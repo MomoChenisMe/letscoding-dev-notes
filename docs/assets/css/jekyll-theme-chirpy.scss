@@ -1,9 +1,16 @@
 ---
 ---
 
+{%- if jekyll.environment == 'production' -%}
+  @use 'main.bundle';
+{%- else -%}
+  @use 'main';
+{%- endif -%}
+
+/* append your custom style below */
+
 /* ===========================================
    現代活潑風格自訂樣式
-   此檔案會在 Chirpy 主題樣式之後載入
    =========================================== */
 
 /* 主色調設定 - 使用 HSL 變數方便調整 */
